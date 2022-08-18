@@ -1,0 +1,133 @@
+.header {
+   .top-header {
+
+      a,
+      p {
+         color: $color-text-primary;
+         font-size: 14px;
+         font-weight: 300;
+      }
+
+      .dropdown {
+         position: relative;
+
+         button {
+            font-size: 14px;
+            font-weight: 300;
+            border: none;
+         }
+
+         .dropdown-item {
+            font-size: 14px;
+            font-weight: 300;
+
+            &:focus {
+               border: none;
+            }
+         }
+
+
+         .dropdown-menu {
+            width: 100%;
+            right: 0;
+         }
+      }
+   }
+
+
+   // navbar brand
+   .navbar-brand {
+      position: relative;
+      overflow: hidden;
+      padding: 5px;
+
+      &::after {
+         content:' ';
+         position:absolute;
+         height:100%;
+         width:100%;
+         top:0px;
+         left:0px;
+         z-index:2;
+         animation: moveafter 2s infinite linear;
+         background: linear-gradient(135deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 45%,rgba(255, 255, 255, 0.637) 50%,rgba(255,255,255,0) 55%,rgba(255,255,255,0) 100%); /* W3C */
+         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+         
+      }
+
+      img{
+         animation: rotat 9s infinite linear;
+      }
+
+      @keyframes rotat {
+         0% {
+            transform: rotate(0deg);
+         }
+         50% {
+            transform: rotate(180deg);
+         }
+         100% {
+            transform: rotate(360deg);
+         }
+      }
+
+      @keyframes moveafter {
+         0% {
+           top:100%;
+           left:100%;
+         }
+         50% {
+           top:-100%;
+           left:-100%;
+         }
+         100% {
+           top:-100%;
+           left:-100%;
+         }
+      }
+
+      @media screen and (max-width: 768px) {
+         width: 55px;
+      }
+   }
+
+   .navbar {
+      .navbar-brand {
+         max-width: 120px;
+         border-radius: 50%;
+      }
+
+      .navbar-nav {
+         .nav-item {
+            &:not(:last-child) {
+               margin-right: 60px;
+            }
+
+            .nav-link {
+               color: $color-text-primary;
+               font-weight: 400;
+               text-transform: uppercase;
+
+               &:hover {
+                  color: $color-text-red;
+               }
+
+               &.active {
+                  color: $color-text-red;
+               }
+            }
+
+            .btn-navbar {
+               text-transform: uppercase;
+               border: 2px solid #2c3e50;
+               border-radius: 3px;
+               padding: 10px 20px;
+
+               &:hover {
+                  background: #4587f21c;
+               }
+            }
+         }
+      }
+   }
+}
